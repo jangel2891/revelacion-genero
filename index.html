@@ -86,6 +86,10 @@ h1 .o{display:block;font-family:var(--s);font-weight:400;font-size:26px;color:#e
 .sub{font-family:var(--s);font-size:23px;color:var(--blue-d);margin-top:14px}
 .lead{font-weight:400;font-size:15px;line-height:1.6;color:#6a6585;margin:12px auto 0;max-width:330px}
 
+.surprise{display:flex;align-items:center;gap:12px;margin:18px auto 0;max-width:350px;padding:14px 16px;border-radius:22px;text-align:left;background:linear-gradient(120deg,#fff3c4,#ffe9f0);border:2.5px dashed rgba(224,168,46,.55)}
+.surprise p{font-size:13.5px;line-height:1.5;color:#6a6585}
+.surprise b{color:var(--ink);font-weight:600}
+.gift{font-size:34px;animation:hop 2.4s ease-in-out infinite}
 /* fecha */
 .dateBox{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:26px}
 .pill{padding:10px 14px;border-radius:20px;font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff;box-shadow:0 6px 0 rgba(0,0,0,.1)}
@@ -177,6 +181,11 @@ h1 .o{display:block;font-family:var(--s);font-weight:400;font-size:26px;color:#e
     <div class="sub s" style="--i:2">¡Vamos a descubrirlo juntos!</div>
     <p class="lead s" style="--i:3">Nuestro bebé viene en camino y queremos que seas parte del momento en que sabremos si es <b style="color:var(--blue-d)">niño</b> o <b style="color:var(--pink-d)">niña</b>.</p>
 
+    <div class="surprise s" style="--i:3">
+      <span class="gift">🎁</span>
+      <p><b>¡Y hay una sorpresa más!</b><br>Será también una sorpresa para nuestro pequeño <b>Juan Felipe</b>, que viene a conocer a su hermanito o hermanita 💛</p>
+    </div>
+
     <div class="dateBox s" style="--i:4">
       <div class="pill a">Domingo</div>
       <div class="big">20</div>
@@ -217,7 +226,7 @@ h1 .o{display:block;font-family:var(--s);font-weight:400;font-size:26px;color:#e
 <script>
 /* ============ EDITA AQUÍ ============ */
 const CONFIG = {
-  nombres:   "Juan Sebastián & Pareja",   // <-- nombres de los futuros papás
+  nombres:   "Sebastián & Valentina",     // nombres de los futuros papás
   fecha:     "2026-12-20T15:00:00-05:00", // hora de Bogotá (UTC-5)
   horaTexto: "3:00 p. m.",
   duracionHoras: 3,
