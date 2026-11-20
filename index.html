@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Revelación de Género · 20 de diciembre</title>
-<meta name="description" content="Ven a descubrir con nosotros si será niño o niña. Domingo 20 de diciembre, Parque de los Novios, Bogotá.">
+<title>Revelación de Género · 6 de diciembre</title>
+<meta name="description" content="Ven a descubrir con nosotros si será niño o niña. Domingo 6 de diciembre, Parque de los Novios, Bogotá.">
 <meta property="og:title" content="¿Niño o niña? El ciclo de la vida continúa 🦁">
-<meta property="og:description" content="Domingo 20 de diciembre · Parque de los Novios, Bogotá">
+<meta property="og:description" content="Domingo 6 de diciembre · Parque de los Novios, Bogotá">
 <meta name="theme-color" content="#f6a04d">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦁</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -207,7 +207,7 @@ h1 .o{display:block;font-family:var(--s);font-weight:400;font-size:26px;color:#e
 
     <div class="dateBox s" style="--i:4">
       <div class="pill a">Domingo</div>
-      <div class="big">20</div>
+      <div class="big">6</div>
       <div class="pill c">Diciembre</div>
     </div>
 
@@ -246,11 +246,11 @@ h1 .o{display:block;font-family:var(--s);font-weight:400;font-size:26px;color:#e
 /* ============ EDITA AQUÍ ============ */
 const CONFIG = {
   nombres:   "Sebastián & Valentina",     // nombres de los futuros papás
-  fecha:     "2026-12-20T15:00:00-05:00", // hora de Bogotá (UTC-5)
+  fecha:     "2026-12-06T15:00:00-05:00", // hora de Bogotá (UTC-5)
   horaTexto: "3:00 p. m.",
   duracionHoras: 3,
   lugar:     "Parque de los Novios, Bogotá",
-  confirmarAntes: "13 de diciembre",
+  confirmarAntes: "29 de noviembre",
   whatsapp:  "573000000000",              // <-- número con indicativo, sin + ni espacios
 };
 /* ================================== */
@@ -259,7 +259,7 @@ const target = new Date(CONFIG.fecha);
 $("#hora").textContent = CONFIG.horaTexto;
 $("#foot").textContent = "Con amor, " + CONFIG.nombres + " · confirma antes del " + CONFIG.confirmarAntes;
 $("#mapLink").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.lugar);
-$("#rsvp").href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent("¡Hola! Confirmo mi asistencia a la revelación de género el 20 de diciembre 💗💙");
+$("#rsvp").href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent("¡Hola! Confirmo mi asistencia a la revelación de género el 6 de diciembre 💗💙");
 
 /* Título con letras saltarinas */
 (function(){
@@ -295,7 +295,7 @@ $("#calBtn").addEventListener("click", () => {
   const f = d => d.toISOString().replace(/[-:]/g,"").replace(/\.\d+/,"");
   const end = new Date(target.getTime() + CONFIG.duracionHoras*3600e3);
   const ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Revelacion//ES","BEGIN:VEVENT",
-    "UID:revelacion-20261220@invitacion","DTSTAMP:"+f(new Date()),"DTSTART:"+f(target),"DTEND:"+f(end),
+    "UID:revelacion-20261206@invitacion","DTSTAMP:"+f(new Date()),"DTSTART:"+f(target),"DTEND:"+f(end),
     "SUMMARY:Revelación de género 💗💙","LOCATION:"+CONFIG.lugar,
     "DESCRIPTION:¿Niño o niña? Ven a descubrirlo con nosotros.","END:VEVENT","END:VCALENDAR"].join("\r\n");
   const a = document.createElement("a");
