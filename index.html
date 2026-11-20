@@ -96,6 +96,14 @@ h1 .o{display:block;font-family:var(--s);font-weight:400;font-size:26px;color:#e
 .sub{font-family:var(--s);font-size:23px;color:var(--blue-d);margin-top:14px}
 .lead{font-weight:400;font-size:15px;line-height:1.6;color:#7a5a46;margin:12px auto 0;max-width:330px}
 
+.hero{position:relative;z-index:1;margin:-34px -24px 6px;height:196px;border-radius:34px 34px 0 0;overflow:hidden}
+.hero svg{display:block;width:100%;height:100%}
+.hero .rays{transform-origin:230px 126px;animation:rays 50s linear infinite}
+.hero .tw circle{animation:tw 3s ease-in-out infinite}.hero .tw circle:nth-child(2n){animation-delay:-1.4s}
+.hero .bd{animation:flap 1.6s ease-in-out infinite}
+@keyframes flap{50%{transform:translateY(-3px)}}
+.hi{margin-top:-10px;position:relative;z-index:2}
+.fl.p{border-radius:50%;background:radial-gradient(circle,#fff3b0,#ffc94a 55%,transparent 70%);box-shadow:0 0 12px #ffc94a}
 .surprise{display:flex;align-items:center;gap:12px;margin:18px auto 0;max-width:350px;padding:14px 16px;border-radius:22px;text-align:left;background:linear-gradient(120deg,#ffe9b0,#ffd9c2);border:2.5px dashed rgba(224,168,46,.55)}
 .surprise p{font-size:13.5px;line-height:1.5;color:#7a5a46}
 .surprise b{color:var(--ink);font-weight:600}
@@ -201,7 +209,29 @@ h1 .o{display:block;font-family:var(--s);font-weight:400;font-size:26px;color:#e
   </div>
 
   <div class="inner">
-    <div class="hi s" style="--i:0">¡Estás invitado!</div>
+    <div class="hero" aria-hidden="true">
+      <svg viewBox="0 0 460 200" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2466"/><stop offset=".38" stop-color="#c2455e"/><stop offset=".7" stop-color="#f27a3d"/><stop offset="1" stop-color="#ffc46a"/></linearGradient>
+          <linearGradient id="hsun" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff9fba"/><stop offset=".5" stop-color="#ff9fba"/><stop offset=".5" stop-color="#7cc4f5"/><stop offset="1" stop-color="#7cc4f5"/></linearGradient>
+          <radialGradient id="hglow"><stop offset="0" stop-color="#fff6c9" stop-opacity=".95"/><stop offset=".45" stop-color="#ffd45c" stop-opacity=".55"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+          <linearGradient id="hfade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf1" stop-opacity="0"/><stop offset="1" stop-color="#fffaf1"/></linearGradient>
+        </defs>
+        <rect width="460" height="200" fill="url(#hsky)"/>
+        <g fill="#fff6c9" class="tw"><circle cx="40" cy="30" r="1.6"/><circle cx="96" cy="18" r="1.2"/><circle cx="150" cy="42" r="1.5"/><circle cx="318" cy="22" r="1.4"/><circle cx="392" cy="40" r="1.8"/><circle cx="436" cy="16" r="1.2"/><circle cx="270" cy="10" r="1.2"/></g>
+        <g class="rays" fill="rgba(255,236,160,.28)"><path d="M290.0 126.0L489.8 116.0L489.8 136.0z"/><path d="M287.1 144.5L480.2 196.8L474.0 215.8z"/><path d="M278.5 161.3L446.1 270.6L434.3 286.8z"/><path d="M265.3 174.5L390.8 330.3L374.6 342.1z"/><path d="M248.5 183.1L319.8 370.0L300.8 376.2z"/><path d="M230.0 186.0L240.0 385.8L220.0 385.8z"/><path d="M211.5 183.1L159.2 376.2L140.2 370.0z"/><path d="M194.7 174.5L85.4 342.1L69.2 330.3z"/><path d="M181.5 161.3L25.7 286.8L13.9 270.6z"/><path d="M172.9 144.5L-14.0 215.8L-20.2 196.8z"/><path d="M170.0 126.0L-29.8 136.0L-29.8 116.0z"/><path d="M172.9 107.5L-20.2 55.2L-14.0 36.2z"/><path d="M181.5 90.7L13.9 -18.6L25.7 -34.8z"/><path d="M194.7 77.5L69.2 -78.3L85.4 -90.1z"/><path d="M211.5 68.9L140.2 -118.0L159.2 -124.2z"/><path d="M230.0 66.0L220.0 -133.8L240.0 -133.8z"/><path d="M248.5 68.9L300.8 -124.2L319.8 -118.0z"/><path d="M265.3 77.5L374.6 -90.1L390.8 -78.3z"/><path d="M278.5 90.7L434.3 -34.8L446.1 -18.6z"/><path d="M287.1 107.5L474.0 36.2L480.2 55.2z"/></g>
+        <circle cx="230" cy="126" r="96" fill="url(#hglow)"/>
+        <circle cx="230" cy="126" r="46" fill="url(#hsun)"/>
+        <circle cx="230" cy="126" r="46" fill="none" stroke="#fff6c9" stroke-width="3" opacity=".8"/>
+        <path d="M0 200V160Q80 146 150 162Q210 174 250 154L292 138Q322 126 348 130L374 114Q394 106 412 114L426 138Q450 148 460 144V200Z" fill="#3b1a1f"/>
+        <path d="M0 200V176Q120 160 230 180Q340 196 460 170V200Z" fill="#26110f"/>
+        <g fill="#150808"><ellipse cx="386" cy="108" rx="9" ry="5.5"/><circle cx="395" cy="101" r="4.6"/><path d="M391 99l1-7 3 3zM398 99l3-6 1 4z"/><path d="M378 110q-9 3-12-3" stroke="#150808" stroke-width="2" fill="none"/></g>
+        <g fill="#150808"><path d="M68 176c2-24 1-36-1-48l5 0c-1 11 0 24 2 48z"/><ellipse cx="72" cy="128" rx="46" ry="8"/><ellipse cx="50" cy="121" rx="24" ry="6"/><ellipse cx="96" cy="122" rx="22" ry="5.5"/></g>
+        <g stroke="#2a1018" stroke-width="1.6" fill="none" stroke-linecap="round"><path class="bd" d="M120 52q5-6 10 0q5-6 10 0"/><path class="bd" style="animation-delay:-1.2s" d="M150 70q4-5 8 0q4-5 8 0"/><path class="bd" style="animation-delay:-.6s" d="M326 56q4-5 8 0q4-5 8 0"/></g>
+        <rect y="150" width="460" height="50" fill="url(#hfade)"/>
+      </svg>
+    </div>
+        <div class="hi s" style="--i:0">¡Estás invitado!</div>
     <h1 class="s" style="--i:1" id="title" aria-label="¿Niño o niña?"></h1>
     <div class="sub s" style="--i:2">¡El ciclo de la vida continúa!</div>
     <p class="lead s" style="--i:3">Un nuevo cachorro viene en camino y queremos que seas parte del momento en que sabremos si es <b style="color:var(--blue-d)">niño</b> o <b style="color:var(--pink-d)">niña</b>.</p>
@@ -311,15 +341,14 @@ $("#calBtn").addEventListener("click", () => {
 });
 
 /* Globos y corazones */
-const fl = $("#floaters"), cols = ["#ff9fba","#7cc4f5","#ffd1de","#bfe3fb","#ffe08a"];
-for(let i=0;i<18;i++){
+const fl = $("#floaters");
+for(let i=0;i<30;i++){
   const e = document.createElement("div");
-  const heart = i % 4 === 0;
-  e.className = "fl " + (heart ? "h" : "b");
-  if(heart) e.textContent = i % 8 ? "✨" : "💙"; else e.style.background = cols[i%cols.length];
-  e.style.left = (Math.random()*96)+"%";
-  e.style.animationDuration = (14+Math.random()*14)+"s";
-  e.style.animationDelay = (-Math.random()*22)+"s";
+  if(i%7===0){ e.className="fl b"; e.style.background = i%2 ? "#ff9fba" : "#7cc4f5"; }
+  else { e.className="fl p"; const w = 4+Math.random()*8; e.style.width = e.style.height = w+"px"; }
+  e.style.left = (Math.random()*98)+"%";
+  e.style.animationDuration = (12+Math.random()*16)+"s";
+  e.style.animationDelay = (-Math.random()*24)+"s";
   fl.appendChild(e);
 }
 
