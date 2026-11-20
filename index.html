@@ -44,6 +44,9 @@ body{font-family:var(--f);color:var(--ink);-webkit-font-smoothing:antialiased;ov
 .sun{position:fixed;z-index:-3;left:50%;bottom:11vh;width:min(70vw,420px);aspect-ratio:1;margin-left:calc(min(70vw,420px)/-2);border-radius:50%;
   background:radial-gradient(circle,#fff6c9 0 36%,#ffd45c 37% 55%,rgba(255,180,70,.5) 56% 70%,transparent 71%);animation:sunp 6s ease-in-out infinite}
 @keyframes sunp{50%{transform:scale(1.06)}}
+.sun::before{content:"";position:absolute;inset:-70%;border-radius:50%;z-index:-1;animation:rays 60s linear infinite;
+  background:repeating-conic-gradient(from 0deg,rgba(255,236,160,.28) 0 6deg,transparent 6deg 18deg);-webkit-mask:radial-gradient(circle,#000 30%,transparent 70%);mask:radial-gradient(circle,#000 30%,transparent 70%)}
+@keyframes rays{to{transform:rotate(360deg)}}
 .savanna{position:fixed;left:0;right:0;bottom:0;width:100%;height:34vh;min-height:220px;z-index:-2;pointer-events:none}
 .bird{position:fixed;z-index:-2;font-size:18px;color:#3a1c24;animation:fly linear infinite}
 @keyframes fly{from{transform:translateX(-60px) translateY(0)}50%{transform:translateX(50vw) translateY(-26px)}to{transform:translateX(calc(100vw + 60px)) translateY(8px)}}
@@ -149,6 +152,7 @@ h1 .o{display:block;font-family:var(--s);font-weight:400;font-size:26px;color:#e
 <svg class="savanna" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
   <path d="M0 300V236Q180 214 330 240Q440 258 520 216L552 174Q592 150 636 162L694 124Q726 102 764 108L784 142Q834 152 884 192Q1010 232 1200 224V300Z" fill="#3b1a1f"/>
   <path d="M0 300V262Q220 244 420 268Q640 290 860 262Q1040 244 1200 266V300Z" fill="#26110f"/>
+  <g fill="#150808"><ellipse cx="716" cy="116" rx="11" ry="7"/><circle cx="727" cy="108" r="5.5"/><path d="M722 105l2-9 3 3zM731 105l4-8 1 5z"/><path d="M705 118q-12 4-16-4" stroke="#150808" stroke-width="2.4" fill="none"/></g>
   <g fill="#1d0c0b"><path d="M140 270c4-40 2-62-2-84l8 0c-2 24 0 44 4 84z"/><ellipse cx="146" cy="184" rx="86" ry="14"/><ellipse cx="108" cy="172" rx="44" ry="10"/><ellipse cx="190" cy="174" rx="40" ry="9"/></g>
   <g fill="#1d0c0b"><path d="M1040 278c3-30 1-46-2-62l6 0c-2 18 0 32 3 62z"/><ellipse cx="1044" cy="214" rx="56" ry="10"/><ellipse cx="1018" cy="206" rx="30" ry="7"/></g>
 </svg>
@@ -162,10 +166,11 @@ h1 .o{display:block;font-family:var(--s);font-weight:400;font-size:26px;color:#e
     <svg viewBox="0 0 180 190">
       <g class="bal"><ellipse cx="22" cy="46" rx="22" ry="28" fill="#7cc4f5"/><ellipse cx="14" cy="36" rx="5" ry="8" fill="#fff" opacity=".6" transform="rotate(25 14 36)"/><path d="M22 74l-5 7h10z" fill="#3b9be0"/><path d="M22 81C26 100 50 110 70 150" stroke="#8a6a55" stroke-width="2" fill="none"/></g>
       <ellipse cx="100" cy="188" rx="40" ry="30" fill="#e8a23a"/>
-      <circle cx="64" cy="92" r="17" fill="#d68a24"/><circle cx="64" cy="92" r="9" fill="#f6c9a0"/>
-      <circle cx="136" cy="92" r="17" fill="#d68a24"/><circle cx="136" cy="92" r="9" fill="#f6c9a0"/>
+      <circle cx="64" cy="92" r="17" fill="#8a4b1a"/><circle cx="64" cy="94" r="15" fill="#d68a24"/><circle cx="64" cy="92" r="9" fill="#f6c9a0"/>
+      <circle cx="136" cy="92" r="17" fill="#8a4b1a"/><circle cx="136" cy="94" r="15" fill="#d68a24"/><circle cx="136" cy="92" r="9" fill="#f6c9a0"/>
       <circle cx="100" cy="124" r="46" fill="#eeab42"/>
       <path d="M78 84l8-18 8 14 8-20 8 14 8-16 6 22q-20-8-46 4z" fill="#c0501d"/>
+      <path d="M58 124l-16 2 12 8-14 8 18-1z" fill="#e0952f"/><path d="M142 124l16 2-12 8 14 8-18-1z" fill="#e0952f"/>
       <ellipse cx="100" cy="140" rx="22" ry="16" fill="#fbe8c2"/>
       <circle class="blink" cx="82" cy="118" r="6" fill="#3a2214"/><circle class="blink" cx="118" cy="118" r="6" fill="#3a2214"/>
       <circle cx="84" cy="116" r="2" fill="#fff"/><circle cx="120" cy="116" r="2" fill="#fff"/>
@@ -181,9 +186,10 @@ h1 .o{display:block;font-family:var(--s);font-weight:400;font-size:26px;color:#e
     <svg viewBox="0 0 180 190">
       <g class="bal"><ellipse cx="158" cy="46" rx="22" ry="28" fill="#ff9fba"/><ellipse cx="150" cy="36" rx="5" ry="8" fill="#fff" opacity=".6" transform="rotate(25 150 36)"/><path d="M158 74l-5 7h10z" fill="#f0668f"/><path d="M158 81C154 100 130 110 110 150" stroke="#8a6a55" stroke-width="2" fill="none"/></g>
       <ellipse cx="90" cy="188" rx="40" ry="30" fill="#ebc88e"/>
-      <circle cx="54" cy="92" r="17" fill="#d9b070"/><circle cx="54" cy="92" r="9" fill="#f2cdb5"/>
-      <circle cx="126" cy="92" r="17" fill="#d9b070"/><circle cx="126" cy="92" r="9" fill="#f2cdb5"/>
+      <circle cx="54" cy="92" r="17" fill="#8a5a2a"/><circle cx="54" cy="94" r="15" fill="#d9b070"/><circle cx="54" cy="92" r="9" fill="#f2cdb5"/>
+      <circle cx="126" cy="92" r="17" fill="#8a5a2a"/><circle cx="126" cy="94" r="15" fill="#d9b070"/><circle cx="126" cy="92" r="9" fill="#f2cdb5"/>
       <circle cx="90" cy="124" r="46" fill="#f0cf98"/>
+      <path d="M48 124l-16 2 12 8-14 8 18-1z" fill="#dcb274"/><path d="M132 124l16 2-12 8 14 8-18-1z" fill="#dcb274"/>
       <ellipse cx="90" cy="140" rx="22" ry="16" fill="#fdf0d6"/>
       <circle class="blink" cx="72" cy="118" r="6" fill="#2f2a3a"/><circle class="blink" cx="108" cy="118" r="6" fill="#2f2a3a"/>
       <circle cx="74" cy="116" r="2" fill="#fff"/><circle cx="110" cy="116" r="2" fill="#fff"/>
@@ -238,6 +244,7 @@ h1 .o{display:block;font-family:var(--s);font-weight:400;font-size:26px;color:#e
     </div>
 
     <div class="zoo s" style="--i:9" aria-hidden="true"><span style="--k:0">🦁</span><span style="--k:1">🐗</span><span style="--k:2">🦓</span><span style="--k:3">🦒</span><span style="--k:4">🐘</span></div>
+    <div class="foot s" style="--i:10;font-family:var(--s);font-size:20px;color:#e0562d;margin-bottom:6px">¡Hakuna Matata!</div>
     <div class="foot s" style="--i:10" id="foot"></div>
   </div>
 </article>
