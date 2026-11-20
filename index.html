@@ -231,14 +231,14 @@ h1 .o{display:block;font-family:var(--s);font-weight:400;font-size:26px;color:#e
         <rect y="150" width="460" height="50" fill="url(#hfade)"/>
       </svg>
     </div>
-        <div class="hi s" style="--i:0">¡Estás invitado!</div>
+        <div class="hi s" style="--i:0">Con el corazón lleno de amor</div>
     <h1 class="s" style="--i:1" id="title" aria-label="¿Niño o niña?"></h1>
     <div class="sub s" style="--i:2">¡El ciclo de la vida continúa!</div>
-    <p class="lead s" style="--i:3">Un nuevo cachorro viene en camino y queremos que seas parte del momento en que sabremos si es <b style="color:var(--blue-d)">niño</b> o <b style="color:var(--pink-d)">niña</b>.</p>
+    <p class="lead s" style="--i:3">Hay noticias que lo cambian todo, y la nuestra llegó con un latidito nuevo. Queremos abrazarte y descubrir contigo, rodeados de quienes más queremos, si en casa llegará un <b style="color:var(--blue-d)">principito</b> o una <b style="color:var(--pink-d)">princesita</b>.</p>
 
     <div class="surprise s" style="--i:3">
       <span class="gift">🎁</span>
-      <p><b>¡Y hay una sorpresa más!</b><br>Será también una sorpresa para nuestro pequeño príncipe <b>Juan Felipe</b>, que viene a conocer a su hermanito o hermanita 🦁</p>
+      <p><b>Una sorpresa muy especial</b><br>Nuestro pequeño <b>Juan Felipe</b> también lo descubrirá ese día: va a conocer a su hermanito o hermanita, ¡y a estrenar el título de hermano mayor! 🦁💛</p>
     </div>
 
     <div class="dateBox s" style="--i:4">
@@ -274,7 +274,7 @@ h1 .o{display:block;font-family:var(--s);font-weight:400;font-size:26px;color:#e
     </div>
 
     <div class="zoo s" style="--i:9" aria-hidden="true"><span style="--k:0">🦁</span><span style="--k:1">🐗</span><span style="--k:2">🦓</span><span style="--k:3">🦒</span><span style="--k:4">🐘</span></div>
-    <div class="foot s" style="--i:10;font-family:var(--s);font-size:20px;color:#e0562d;margin-bottom:6px">¡Hakuna Matata!</div>
+    <div class="foot s" style="--i:10;font-family:var(--s);font-size:20px;color:#e0562d;margin-bottom:6px">Tu cariño es el mejor regalo 💛</div>
     <div class="foot s" style="--i:10" id="foot"></div>
   </div>
 </article>
@@ -294,7 +294,7 @@ const CONFIG = {
 const $ = s => document.querySelector(s);
 const target = new Date(CONFIG.fecha);
 $("#hora").textContent = CONFIG.horaTexto;
-$("#foot").textContent = "Con amor, " + CONFIG.nombres + " · confirma antes del " + CONFIG.confirmarAntes;
+$("#foot").textContent = "Con todo nuestro amor, " + CONFIG.nombres + " · confirma antes del " + CONFIG.confirmarAntes;
 $("#mapLink").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.lugar);
 $("#rsvp").href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent("¡Hola! Confirmo mi asistencia a la revelación de género el 6 de diciembre 💗💙");
 
