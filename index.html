@@ -199,7 +199,7 @@ footer{text-align:center;padding:50px 24px 70px}
     <p class="betmsg" id="betMsg"></p>
     <div class="orn rv">✦</div>
     <div class="kick rv">Confirma tu asistencia</div>
-    <div class="btns rv d1"><a class="btn main" id="rsvp" target="_blank" rel="noopener" href="#">💌 Confirmar asistencia</a></div>
+    <div class="btns rv d1" id="rsvpBox"></div>
   </section>
 
   <footer>
@@ -217,7 +217,7 @@ const CONFIG = {
   duracionHoras: 3,
   lugar:     "Parque de los Novios, Bogotá",
   confirmarAntes: "29 de noviembre",
-  whatsapp:  "573000000000",              // <-- número con indicativo, sin + ni espacios
+  whatsapp:  ["573138884908","573506854907"],  // números de confirmación (con indicativo, sin +)
 };
 /* ================================== */
 const $ = s => document.querySelector(s);
@@ -225,7 +225,15 @@ const target = new Date(CONFIG.fecha);
 $("#hora").textContent = CONFIG.horaTexto; $("#horaTop").textContent = CONFIG.horaTexto;
 $("#foot").textContent = "Con todo nuestro amor, " + CONFIG.nombres + " · confirma antes del " + CONFIG.confirmarAntes;
 $("#mapLink").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.lugar);
-$("#rsvp").href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent("¡Hola! Confirmo mi asistencia a la revelación de género el 6 de diciembre 💛");
+const msgWA = encodeURIComponent("¡Hola! Confirmo mi asistencia a la revelación de género el 6 de diciembre 💛");
+CONFIG.whatsapp.forEach(n => {
+  const a = document.createElement("a");
+  a.className = "btn main"; a.target = "_blank"; a.rel = "noopener";
+  a.href = "https://wa.me/" + n + "?text=" + msgWA;
+  a.textContent = "💌 Confirmar · " + n.slice(2,5) + " " + n.slice(5,8) + " " + n.slice(8);
+  a.addEventListener("click", e => burst(e.clientX, e.clientY, 100));
+  $("#rsvpBox").appendChild(a);
+});
 
 /* Título */
 (function(){
@@ -294,7 +302,6 @@ function loop(){
 }
 setTimeout(() => { burst(innerWidth*.2, innerHeight*.55, 80); burst(innerWidth*.8, innerHeight*.55, 80); }, 1500);
 document.addEventListener("click", e => { if(!e.target.closest("a,button")) burst(e.clientX, e.clientY, 60); });
-$("#rsvp").addEventListener("click", e => burst(e.clientX, e.clientY, 100));
 
 /* Apuesta */
 (function(){
