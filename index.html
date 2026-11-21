@@ -162,7 +162,7 @@ footer{text-align:center;padding:50px 24px 70px}
   <section class="sec" style="min-height:58svh">
     <div class="gift rv">🎁</div>
     <h2 class="rv d1">Una sorpresa <em>muy especial</em></h2>
-    <p class="txt rv d2">Nuestro pequeño <b>Juan Felipe</b> también vivirá este momento con nosotros: ese día descubrirá si tendrá un <b>hermanito</b> o una <b>hermanita</b>, y estamos seguros de que será su mejor compañero de aventuras 💛</p>
+    <p class="txt rv d2">Nuestro pequeño <b>Juan Felipe</b> también vivirá este momento con nosotros: ese día descubrirá si tendrá un <b>hermanito</b> o una <b>hermanita</b>, y estamos seguros de que el amor entre ellos será enorme 💛</p>
   </section>
 
   <section class="sec">
@@ -200,6 +200,7 @@ footer{text-align:center;padding:50px 24px 70px}
     <div class="orn rv">✦</div>
     <div class="kick rv">Confirma tu asistencia</div>
     <div class="btns rv d1" id="rsvpBox"></div>
+    <p class="txt rv d2" style="font-size:15px;margin-top:14px">Al confirmar enviaremos también tu apuesta 💙💗</p>
   </section>
 
   <footer>
@@ -225,13 +226,15 @@ const target = new Date(CONFIG.fecha);
 $("#hora").textContent = CONFIG.horaTexto; $("#horaTop").textContent = CONFIG.horaTexto;
 $("#foot").textContent = "Con todo nuestro amor, " + CONFIG.nombres + " · confirma antes del " + CONFIG.confirmarAntes;
 $("#mapLink").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.lugar);
-const msgWA = encodeURIComponent("¡Hola! Confirmo mi asistencia a la revelación de género el 29 de noviembre 💛");
+let BET = null; try{ BET = localStorage.getItem("bet"); }catch(e){}
+const waText = () => "¡Hola! Confirmo mi asistencia a la revelación de género el 29 de noviembre 💛" +
+  (BET==="b" ? "\nMi apuesta: ¡Niño! 💙" : BET==="g" ? "\nMi apuesta: ¡Niña! 💗" : "");
 CONFIG.whatsapp.forEach(n => {
   const a = document.createElement("a");
   a.className = "btn main"; a.target = "_blank"; a.rel = "noopener";
-  a.href = "https://wa.me/" + n + "?text=" + msgWA;
+  a.href = "https://wa.me/" + n;
   a.textContent = "💌 Confirmar · " + n.slice(2,5) + " " + n.slice(5,8) + " " + n.slice(8);
-  a.addEventListener("click", e => burst(e.clientX, e.clientY, 100));
+  a.addEventListener("click", e => { a.href = "https://wa.me/" + n + "?text=" + encodeURIComponent(waText()); burst(e.clientX, e.clientY, 100); });
   $("#rsvpBox").appendChild(a);
 });
 
@@ -306,10 +309,9 @@ document.addEventListener("click", e => { if(!e.target.closest("a,button")) burs
 /* Apuesta */
 (function(){
   const msg = $("#betMsg"), B = $("#betB"), G = $("#betG");
-  const say = v => { B.classList.toggle("on", v==="b"); G.classList.toggle("on", v==="g");
+  const say = v => { BET = v; B.classList.toggle("on", v==="b"); G.classList.toggle("on", v==="g");
     msg.textContent = v==="b" ? "¡Tu apuesta: Niño! 💙 Ya la anotamos." : v==="g" ? "¡Tu apuesta: Niña! 💗 Ya la anotamos." : ""; };
-  let saved = null; try{ saved = localStorage.getItem("bet"); }catch(e){}
-  if(saved) say(saved);
+  if(BET) say(BET);
   [[B,"b",["#9cc4de","#7fb1d3","#fffaf0"]],[G,"g",["#f0b4c2","#e898ab","#fffaf0"]]].forEach(([el,v,pal]) => el.addEventListener("click", () => {
     try{ localStorage.setItem("bet", v); }catch(_){}
     say(v); const r = el.getBoundingClientRect(); burst(r.left+r.width/2, r.top, 90, pal);
