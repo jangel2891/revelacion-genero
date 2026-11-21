@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Revelación de Género · 6 de diciembre</title>
-<meta name="description" content="Ven a descubrir con nosotros si será niño o niña. Domingo 6 de diciembre, 2:00 p. m., Parque de los Novios, Bogotá.">
+<title>Revelación de Género · 29 de noviembre</title>
+<meta name="description" content="Ven a descubrir con nosotros si será niño o niña. Domingo 29 de noviembre, 2:00 p. m., Parque de los Novios, Bogotá.">
 <meta property="og:title" content="¿Niño o niña? Te invitamos a descubrirlo">
-<meta property="og:description" content="Domingo 6 de diciembre · 2:00 p. m. · Parque de los Novios, Bogotá">
+<meta property="og:description" content="Domingo 29 de noviembre · 2:00 p. m. · Parque de los Novios, Bogotá">
 <meta name="theme-color" content="#fbf5ea">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧸</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,7 +74,7 @@ h2 em{font-family:var(--s);font-style:normal;font-weight:400;color:var(--terra)}
 .badge{position:relative;width:min(70vw,270px);aspect-ratio:1;display:grid;place-items:center;margin:24px 0 6px;border-radius:50%;background:var(--paper);border:3px dashed var(--terra);box-shadow:0 0 0 10px var(--paper),0 0 0 12px rgba(157,187,152,.6),0 24px 44px rgba(217,143,110,.25);animation:wob 6s ease-in-out infinite}
 @keyframes wob{50%{transform:rotate(2.5deg)}}
 .badge .d1{position:absolute;top:15%;font-size:12px;letter-spacing:.42em;text-transform:uppercase;font-weight:600;color:var(--sage-d);padding-left:.42em}
-.badge .n{font-size:clamp(100px,30vw,150px);font-weight:700;line-height:1;color:var(--terra)}
+.badge .n{font-size:clamp(84px,25vw,124px);font-weight:700;line-height:1;color:var(--terra)}
 .badge .d2{position:absolute;bottom:15%;font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;padding-left:.3em}
 .info{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px}
 .chip{padding:16px 24px;border-radius:22px;background:var(--paper);border:2px dashed var(--peach);min-width:150px;box-shadow:0 10px 24px rgba(217,143,110,.14)}
@@ -148,7 +148,7 @@ footer{text-align:center;padding:50px 24px 70px}
     <div class="hi">Con mucho amor te invitamos</div>
     <h1 id="title" aria-label="¿Niño o niña?"></h1>
     <div class="sub">¿Listo para descubrirlo con nosotros?</div>
-    <div class="when"><span>📅 Domingo 6 de diciembre</span><span>🕑 <b id="horaTop">2:00 p. m.</b></span><span>📍 Parque de los Novios</span></div>
+    <div class="when"><span>📅 Domingo 29 de noviembre</span><span>🕑 <b id="horaTop">2:00 p. m.</b></span><span>📍 Parque de los Novios</span></div>
     <div class="scroll">Desliza</div>
   </header>
 
@@ -162,12 +162,12 @@ footer{text-align:center;padding:50px 24px 70px}
   <section class="sec" style="min-height:58svh">
     <div class="gift rv">🎁</div>
     <h2 class="rv d1">Una sorpresa <em>muy especial</em></h2>
-    <p class="txt rv d2">Nuestro pequeño <b>Juan Felipe</b> será el primero en abrazar a quien viene en camino, y ese día descubrirá, con los ojitos más brillantes del mundo, si tendrá un <b>hermanito</b> o una <b>hermanita</b> para cuidar y llenar de cariño 💛</p>
+    <p class="txt rv d2">Nuestro pequeño <b>Juan Felipe</b> también vivirá este momento con nosotros: ese día descubrirá si tendrá un <b>hermanito</b> o una <b>hermanita</b>, y estamos seguros de que será su mejor compañero de aventuras 💛</p>
   </section>
 
   <section class="sec">
     <div class="kick rv">Guarda la fecha</div>
-    <div class="badge rv d1"><span class="d1">Domingo</span><span class="n">6</span><span class="d2">Diciembre · 2026</span></div>
+    <div class="badge rv d1"><span class="d1">Domingo</span><span class="n">29</span><span class="d2">Noviembre · 2026</span></div>
     <div class="info rv d2">
       <div class="chip"><small>Hora</small><p id="hora">2:00 p. m.</p><span>Te esperamos puntual</span></div>
       <div class="chip"><small>Lugar</small><p>Parque de los Novios</p><span>Bogotá, Colombia</span></div>
@@ -212,11 +212,11 @@ footer{text-align:center;padding:50px 24px 70px}
 /* ============ EDITA AQUÍ ============ */
 const CONFIG = {
   nombres:   "Sebastián & Valentina",
-  fecha:     "2026-12-06T14:00:00-05:00", // hora de Bogotá (UTC-5)
+  fecha:     "2026-11-29T14:00:00-05:00", // hora de Bogotá (UTC-5)
   horaTexto: "2:00 p. m.",
   duracionHoras: 3,
   lugar:     "Parque de los Novios, Bogotá",
-  confirmarAntes: "29 de noviembre",
+  confirmarAntes: "25 de noviembre",
   whatsapp:  ["573138884908","573506854907"],  // números de confirmación (con indicativo, sin +)
 };
 /* ================================== */
@@ -225,7 +225,7 @@ const target = new Date(CONFIG.fecha);
 $("#hora").textContent = CONFIG.horaTexto; $("#horaTop").textContent = CONFIG.horaTexto;
 $("#foot").textContent = "Con todo nuestro amor, " + CONFIG.nombres + " · confirma antes del " + CONFIG.confirmarAntes;
 $("#mapLink").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.lugar);
-const msgWA = encodeURIComponent("¡Hola! Confirmo mi asistencia a la revelación de género el 6 de diciembre 💛");
+const msgWA = encodeURIComponent("¡Hola! Confirmo mi asistencia a la revelación de género el 29 de noviembre 💛");
 CONFIG.whatsapp.forEach(n => {
   const a = document.createElement("a");
   a.className = "btn main"; a.target = "_blank"; a.rel = "noopener";
@@ -267,7 +267,7 @@ $("#calBtn").addEventListener("click", () => {
   const f = d => d.toISOString().replace(/[-:]/g,"").replace(/\.\d+/,"");
   const end = new Date(target.getTime() + CONFIG.duracionHoras*3600e3);
   const ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Revelacion//ES","BEGIN:VEVENT",
-    "UID:revelacion-20261206@invitacion","DTSTAMP:"+f(new Date()),"DTSTART:"+f(target),"DTEND:"+f(end),
+    "UID:revelacion-20261129@invitacion","DTSTAMP:"+f(new Date()),"DTSTART:"+f(target),"DTEND:"+f(end),
     "SUMMARY:Revelación de género 🧸","LOCATION:"+CONFIG.lugar,
     "DESCRIPTION:¿Niño o niña? Ven a descubrirlo con nosotros.","END:VEVENT","END:VCALENDAR"].join("\r\n");
   const a = document.createElement("a");
