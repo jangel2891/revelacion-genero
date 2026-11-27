@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Revelación de Género · 29 de noviembre</title>
-<meta name="description" content="Ven a descubrir con nosotros si será niño o niña. Domingo 29 de noviembre, 2:00 p. m., Parque de los Novios, Bogotá.">
+<title>Revelación de Género · 13 de diciembre</title>
+<meta name="description" content="Ven a descubrir con nosotros si será niño o niña. Domingo 13 de diciembre, 12:00 m., Parque de los Novios, Bogotá.">
 <meta property="og:title" content="¿Niño o niña? Te invitamos a descubrirlo">
-<meta property="og:description" content="Domingo 29 de noviembre · 2:00 p. m. · Parque de los Novios, Bogotá">
+<meta property="og:description" content="Domingo 13 de diciembre · 12:00 m. · Parque de los Novios, Bogotá">
 <meta name="theme-color" content="#fbf5ea">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧸</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -148,7 +148,7 @@ footer{text-align:center;padding:50px 24px 70px}
     <div class="hi">Con mucho amor te invitamos</div>
     <h1 id="title" aria-label="¿Niño o niña?"></h1>
     <div class="sub">¿Listo para descubrirlo con nosotros?</div>
-    <div class="when"><span>📅 Domingo 29 de noviembre</span><span>🕑 <b id="horaTop">2:00 p. m.</b></span><span>📍 Parque de los Novios</span></div>
+    <div class="when"><span>📅 Domingo 13 de diciembre</span><span>🕑 <b id="horaTop">12:00 m.</b></span><span>📍 Parque de los Novios</span></div>
     <div class="scroll">Desliza</div>
   </header>
 
@@ -167,9 +167,9 @@ footer{text-align:center;padding:50px 24px 70px}
 
   <section class="sec">
     <div class="kick rv">Guarda la fecha</div>
-    <div class="badge rv d1"><span class="d1">Domingo</span><span class="n">29</span><span class="d2">Noviembre · 2026</span></div>
+    <div class="badge rv d1"><span class="d1">Domingo</span><span class="n">13</span><span class="d2">Diciembre · 2026</span></div>
     <div class="info rv d2">
-      <div class="chip"><small>Hora</small><p id="hora">2:00 p. m.</p><span>Te esperamos puntual</span></div>
+      <div class="chip"><small>Hora</small><p id="hora">12:00 m.</p><span>Te esperamos puntual</span></div>
       <div class="chip"><small>Lugar</small><p>Parque de los Novios</p><span>Bogotá, Colombia</span></div>
     </div>
     <div class="polaroid rv d3"><i class="tape"></i><iframe title="Mapa Parque de los Novios, Bogotá" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Parque%20de%20los%20Novios%2C%20Bogot%C3%A1&hl=es&z=15&output=embed"></iframe><p>📍 Parque de los Novios</p></div>
@@ -213,11 +213,11 @@ footer{text-align:center;padding:50px 24px 70px}
 /* ============ EDITA AQUÍ ============ */
 const CONFIG = {
   nombres:   "Sebastián & Valentina",
-  fecha:     "2026-11-29T14:00:00-05:00", // hora de Bogotá (UTC-5)
-  horaTexto: "2:00 p. m.",
+  fecha:     "2026-12-13T12:00:00-05:00", // hora de Bogotá (UTC-5)
+  horaTexto: "12:00 m.",
   duracionHoras: 3,
   lugar:     "Parque de los Novios, Bogotá",
-  confirmarAntes: "25 de noviembre",
+  confirmarAntes: "8 de diciembre",
   whatsapp:  ["573138884908","573506854907"],  // números de confirmación (con indicativo, sin +)
 };
 /* ================================== */
@@ -227,7 +227,7 @@ $("#hora").textContent = CONFIG.horaTexto; $("#horaTop").textContent = CONFIG.ho
 $("#foot").textContent = "Con todo nuestro amor, " + CONFIG.nombres + " · confirma antes del " + CONFIG.confirmarAntes;
 $("#mapLink").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.lugar);
 let BET = null; try{ BET = localStorage.getItem("bet"); }catch(e){}
-const waText = () => "¡Hola! Confirmo mi asistencia a la revelación de género el 29 de noviembre 💛" +
+const waText = () => "¡Hola! Confirmo mi asistencia a la revelación de género el 13 de diciembre 💛" +
   (BET==="b" ? "\nMi apuesta: ¡Niño! 💙" : BET==="g" ? "\nMi apuesta: ¡Niña! 💗" : "");
 CONFIG.whatsapp.forEach(n => {
   const a = document.createElement("a");
@@ -270,7 +270,7 @@ $("#calBtn").addEventListener("click", () => {
   const f = d => d.toISOString().replace(/[-:]/g,"").replace(/\.\d+/,"");
   const end = new Date(target.getTime() + CONFIG.duracionHoras*3600e3);
   const ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Revelacion//ES","BEGIN:VEVENT",
-    "UID:revelacion-20261129@invitacion","DTSTAMP:"+f(new Date()),"DTSTART:"+f(target),"DTEND:"+f(end),
+    "UID:revelacion-20261213@invitacion","DTSTAMP:"+f(new Date()),"DTSTART:"+f(target),"DTEND:"+f(end),
     "SUMMARY:Revelación de género 🧸","LOCATION:"+CONFIG.lugar,
     "DESCRIPTION:¿Niño o niña? Ven a descubrirlo con nosotros.","END:VEVENT","END:VCALENDAR"].join("\r\n");
   const a = document.createElement("a");
